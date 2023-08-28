@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Add the "is_student" field to the res.partner form view -->
+        <record id="view_res_partner_form_student_inheritt" model="ir.ui.view">
+            <field name="name">res.partner.form.student.inheritt</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/div[@class='o_address_format']" position="after">
+                    <group>
+                        <field string="Is Student" name="is_student"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

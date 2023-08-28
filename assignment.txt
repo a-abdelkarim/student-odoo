@@ -3,7 +3,7 @@ Development Task (all levels)
 
 Task 1 (Partner Form):
 1. Add check box on partner called (is_student)
-2. Add a birth_date ield of type date with constraint that age shall be from 4 to 5 years old at today.
+2. Add a birth_date field of type date with constraint that age shall be from 4 to 5 years old at today.
 3. In res.partner, add the ilter Student, to show only partners that are students
 
 
