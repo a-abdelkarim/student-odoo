@@ -10,6 +10,7 @@
                 <xpath expr="//form/sheet/group/group/div[@class='o_address_format']" position="after">
                     <group>
                         <field string="Is Student" name="is_student"/>
+                        <field string="Birth Date" name="birth_date"/>
                     </group>
                 </xpath>
             </field>
