@@ -9,8 +9,8 @@ Task 1 (Partner Form):
 
 Task 2 (Student Registration):
 Description: create new model called Student Registration (student.registration) with the following fields:
-1. name: char ield, take automatic sequence like (RG000001)
-2. student_id: many2one on res.partner model ( ilter on partner that has the check box is_student)
+1. name: char field, take automatic sequence like (RG000001)
+2. student_id: many2one on res.partner model ( filter on partner that has the check box is_student)
 and when creating students on the ly please make sure that checkbox is checked by default.
 (required*)
 3. phone: related by student phone
