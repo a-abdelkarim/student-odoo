@@ -2,9 +2,9 @@ Development Task (all levels)
 
 
 Task 1 (Partner Form):
-1. Add check box on partner called (is_student)
-2. Add a birth_date field of type date with constraint that age shall be from 4 to 5 years old at today.
-3. In res.partner, add the filter Student, to show only partners that are students
+1. Add check box on partner called (is_student) - done
+2. Add a birth_date field of type date with constraint that age shall be from 4 to 5 years old at today. - done
+3. In res.partner, add the filter Student, to show only partners that are students - done
 
 
 Task 2 (Student Registration):
@@ -44,12 +44,12 @@ with the check box is_student
 
 
 Task 3 (Invoice Model):
-1. registration_id: many2one ield on student.registration model
+1. registration_id: many2one field on student.registration model
 2. In student registration model worklow add button to create invoice for this student and link it
 to this registration form
 3. Smart button to open the student invoice
 
 
 Task 4 (Website):
-1. Create website form for student registration, when any visitor ills and submits it, it
+1. Create website form for student registration, when any visitor fills and submits it, it
 creates a new student, make sure that all ields are validated before submission.

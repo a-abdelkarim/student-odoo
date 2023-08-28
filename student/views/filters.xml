@@ -6,8 +6,6 @@
             <field name="name">view.inherit.res.partner.search.form</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter"/>
-            <!-- <field name="mode">primary</field> -->
-            <!-- <field name="priority">10</field> -->
             <field name="arch" type="xml">
                 <xpath expr="//search/filter" position="after">
                     <filter string="Students" name="students" domain="[('is_student','=', True)]"/>

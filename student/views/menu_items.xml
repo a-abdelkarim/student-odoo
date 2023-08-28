@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <!-- base menu -->
+        <menuitem 
+            action="action_view_student_registration_tree" 
+            id="action_menu_student_registration" 
+            name="Student" 
+            sequence="1"
+        />
+
+        
+    </data>
+</odoo>
