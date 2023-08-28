@@ -1,0 +1,55 @@
+Development Task (all levels)
+
+
+Task 1 (Partner Form):
+1. Add check box on partner called (is_student)
+2. Add a birth_date ield of type date with constraint that age shall be from 4 to 5 years old at today.
+3. In res.partner, add the ilter Student, to show only partners that are students
+
+
+Task 2 (Student Registration):
+Description: create new model called Student Registration (student.registration) with the following fields:
+1. name: char ield, take automatic sequence like (RG000001)
+2. student_id: many2one on res.partner model ( ilter on partner that has the check box is_student)
+and when creating students on the ly please make sure that checkbox is checked by default.
+(required*)
+3. phone: related by student phone
+4. age: computed ield that calculates student age from student birth date and checks for the 4-5
+years constraint.
+5. date: date field. (required*)
+6. currency_id: many2one ield on res.currency model and will take company currency by default.
+(readonly)
+7. amount: (registration fees) monetary ield. (required*)
+8. state: selection ield with the following values (draft – conirmed – invoiced - canceled)
+
+
+Worklow:
+1. Once student registration created, it will be in draft state
+2. Button conirm to change state to conirmed
+3. Cancel button to change state to canceled
+
+Views:
+1. Create form, tree, search and calendar view
+2. Add Group By “State”
+Security:
+1. Create security group called (registration Manager)
+
+Menu items:
+1. Root menu called Registration
+2. Add a new sub menu under the registration menu named (Student Registration) that will open
+the student registration model. This menu item will appear to the user that has a student
+registration manager group.
+3. Add a new submenu menu under the registration menu called students that shows all partners
+with the check box is_student
+
+
+Task 3 (Invoice Model):
+1. registration_id: many2one ield on student.registration model
+2. In student registration model worklow add button to create invoice for this student and link it
+to this registration form
+3. Smart button to open the student invoice
+
+
+Task 4 (Website):
+1. Create website form for student registration, when any visitor ills and submits it, it
+creates a new student, make sure that all ields are validated before submission.
