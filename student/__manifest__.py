@@ -38,4 +38,13 @@
     'demo': [
         'demo/demo.xml',
     ],
+    
+    'assets': {
+        'web.assets_common': [
+            'student/static/src/css/student.css'
+        ],
+        'web.assets_frontend': [
+            'student/static/src/css/student.css'
+        ]
+    },
 }

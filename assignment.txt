@@ -52,4 +52,4 @@ to this registration form  V
 
 Task 4 (Website):
 1. Create website form for student registration, when any visitor fills and submits it, it
-creates a new student, make sure that all ields are validated before submission.
+creates a new student, make sure that all fields are validated before submission.
