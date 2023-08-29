@@ -9,30 +9,30 @@ Task 1 (Partner Form):
 
 Task 2 (Student Registration):
 Description: create new model called Student Registration (student.registration) with the following fields:
-1. name: char field, take automatic sequence like (RG000001)
-2. student_id: many2one on res.partner model ( filter on partner that has the check box is_student)
+1. name: char field, take automatic sequence like (RG000001)  V
+2. student_id: many2one on res.partner model ( filter on partner that has the check box is_student)  V
 and when creating students on the ly please make sure that checkbox is checked by default.
-(required*)
-3. phone: related by student phone
+(required*)  V
+3. phone: related by student phone  V
 4. age: computed ield that calculates student age from student birth date and checks for the 4-5
-years constraint.
-5. date: date field. (required*)
+years constraint.  V
+5. date: date field. (required*)  V
 6. currency_id: many2one field on res.currency model and will take company currency by default.
-(readonly)
-7. amount: (registration fees) monetary field. (required*)
-8. state: selection ield with the following values (draft – conirmed – invoiced - canceled)
+(readonly)  V
+7. amount: (registration fees) monetary field. (required*)  V
+8. state: selection ield with the following values (draft – conirmed – invoiced - canceled)  V
 
 
 Worklow:
-1. Once student registration created, it will be in draft state
-2. Button conirm to change state to conirmed
-3. Cancel button to change state to canceled
+1. Once student registration created, it will be in draft state  V
+2. Button conirm to change state to conirmed  V
+3. Cancel button to change state to canceled  V
 
 Views:
-1. Create form, tree, search and calendar view
-2. Add Group By “State”
+1. Create form, tree, search and calendar view  X
+2. Add Group By “State” V
 Security:
-1. Create security group called (registration Manager)
+1. Create security group called (registration Manager) V
 
 Menu items:
 1. Root menu called Registration

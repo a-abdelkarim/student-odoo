@@ -1,12 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data noupdate="0">
+
+        <!-- Student Registration Calendar View -->
+        <record id="view_student_registration_calendar" model="ir.ui.view">
+            <field name="name">student.registration.calendar</field>
+            <field name="model">student.registration</field>
+            <field name="arch" type="xml">
+                <calendar string="Student Registration Calendar" date_start="date" date_stop="date">
+                    <field name="name"/>
+                    <field name="state"/>
+                </calendar>
+            </field>
+        </record>
+
         <!-- Student Registration Form View -->
         <record id="view_student_registration_form" model="ir.ui.view">
             <field name="name">student.registration.form</field>
             <field name="model">student.registration</field>
             <field name="arch" type="xml">
                 <form string="Student Registration">
+                    <header>
+                        <button 
+                            name="confirm_registration" 
+                            string="Confirm"
+                            type="object" 
+                            class="oe_highlight"
+                        />
+                        <button 
+                            name="cancel_registration" 
+                            string="Cancel"
+                            type="object" 
+                            class="btn-danger"
+                        />
+                    </header>
                     <sheet>
                         <group col="2">
                             <group>
@@ -41,13 +68,13 @@
                 </tree>
            </field>
         </record>
+        
         <record id="action_view_student_registration_tree" model="ir.actions.act_window">
             <field name="name">Registered Students</field>
             <field name="res_model">student.registration</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar</field>
             <field name="view_id" ref="student_registration_tree_view"/>
-            <!-- <field name="domain">[('task_legal_type', '=', 'normal')]</field> -->
-            <!-- <field name="context">{'search_default_bailiff_department': 1, 'search_default_balanced':2, 'default_task_legal_type': 'normal', 'default_is_sent': True}</field> -->
+            <field name="context">{'search_default_registration_state': 1}</field>
         </record>
     </data>
 </odoo>

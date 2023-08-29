@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <record id="security_categ_student" model="ir.module.category">
+            <field name="name">Student</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="group_registration_manager" model="res.groups">
+           <field name="name">Registration Manager</field>
+           <field name="category_id" ref="student.security_categ_student"/>
+        </record>
+    </data>
+</odoo>

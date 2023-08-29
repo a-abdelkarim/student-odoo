@@ -21,7 +21,7 @@ class StudentRegistration(models.Model):
         default=
         lambda self: self._generate_name()
     )
-    student_id = fields.Many2one(comodel_name='res.partner', domain=[('is_student', '=', True)], required=True, readonly=True)
+    student_id = fields.Many2one(comodel_name='res.partner', domain=[('is_student', '=', True)], required=True)
     phone = fields.Char(related='student_id.phone', readonly=True)
     age = fields.Integer(string='Age', compute='_compute_age', store=True)
     date = fields.Date("Date")
@@ -44,3 +44,18 @@ class StudentRegistration(models.Model):
                 record.age = age
             else:
                 record.age = False
+    
+    # actions
+    def confirm_registration(self):
+        for record in self:
+            if record.state == 'confirmed':
+                exceptions.UserError('Registration Already Confirmed!')
+            else:
+                record.state = 'confirmed'
+                
+    def cancel_registration(self):
+        for record in self:
+            if record.state == 'canceled':
+                exceptions.UserError('Registration Already Canceled!')
+            else:
+                record.state = 'canceled'
