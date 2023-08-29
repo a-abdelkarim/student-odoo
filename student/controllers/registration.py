@@ -6,7 +6,6 @@ class StudentRegistrationWebsite(http.Controller):
     @http.route('/student/registration/submit', type='http', auth="public", website=True, csrf=False)
     def student_registration_create(self, **post):
         if post:
-            # Validate fields and create the student registration
             student_registration = request.env['student.registration'].sudo().create({
                 'student_id': int(post.get('student_id')),
                 'phone': post.get('phone'),

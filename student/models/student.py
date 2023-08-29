@@ -45,14 +45,7 @@ class StudentRegistration(models.Model):
                 record.age = age
             else:
                 record.age = False
-                
-    # @api.onchange('student_id')
-    # def _onchange_student_id(self):
-    #     for record in self:
-    #         if record.student_id:
-    #             record.currency_id = record.student_id.company_id.currency_id.id
-    #             print(record.student_id.company_id)
-    
+
     # actions
     def confirm_registration(self):
         for record in self:
