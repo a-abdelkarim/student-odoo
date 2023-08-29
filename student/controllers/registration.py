@@ -3,7 +3,7 @@ from odoo.http import request
 
 class StudentRegistrationWebsite(http.Controller):
 
-    @http.route('/student_registration/create', type='http', auth="public", website=True)
+    @http.route('/student/registration/submit', type='http', auth="public", website=True, csrf=False)
     def student_registration_create(self, **post):
         if post:
             # Validate fields and create the student registration
@@ -21,4 +21,4 @@ class StudentRegistrationWebsite(http.Controller):
             'students': students,
         }
 
-        return request.render('student.student_registration_form_template', context)
+        return request.render('student.website_student_registration_page', context)
