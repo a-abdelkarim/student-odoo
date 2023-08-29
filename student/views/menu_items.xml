@@ -9,5 +9,21 @@
             sequence="1"
             groups='student.group_registration_manager'
         />
+        
+        <!-- sale_menu_root -->
+        <menuitem 
+            id="root_menu_student" 
+            name="Registration" 
+            sequence="1"
+            parent='sale.sale_menu_root'
+            groups='student.group_registration_manager'
+        >  
+            <menuitem
+                action="action_view_student_registration_form"
+                id="student_registration_menu"
+                name="Student Registration"
+                sequence="1"/>
+
+        </menuitem>
     </data>
 </odoo>

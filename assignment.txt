@@ -29,7 +29,7 @@ Worklow:
 3. Cancel button to change state to canceled  V
 
 Views:
-1. Create form, tree, search and calendar view  X
+1. Create form, tree, search and calendar view  V
 2. Add Group By “State” V
 Security:
 1. Create security group called (registration Manager) V

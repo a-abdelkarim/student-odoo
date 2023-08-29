@@ -19,7 +19,7 @@
             <field name="name">student.registration.form</field>
             <field name="model">student.registration</field>
             <field name="arch" type="xml">
-                <form string="Student Registration">
+                <form string="Student Registration Form">
                     <header>
                         <button 
                             name="confirm_registration" 
@@ -71,12 +71,20 @@
            </field>
         </record>
 
+        <!-- Actions -->
         <record id="action_view_student_registration_tree" model="ir.actions.act_window">
             <field name="name">Registered Students</field>
             <field name="res_model">student.registration</field>
             <field name="view_mode">tree,form,calendar</field>
             <field name="view_id" ref="student_registration_tree_view"/>
             <field name="context">{'search_default_registration_state': 1}</field>
+        </record>
+
+        <record id="action_view_student_registration_form" model="ir.actions.act_window">
+            <field name="name">view.student.registration.form</field>
+            <field name="res_model">student.registration</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_student_registration_form"/>
         </record>
     </data>
 </odoo>

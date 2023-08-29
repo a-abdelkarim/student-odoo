@@ -27,7 +27,7 @@ class StudentRegistration(models.Model):
     date = fields.Date("Date")
     currency_id = fields.Many2one(related='student_id.company_id.currency_id',  readonly=True)
     amount = fields.Monetary(string='Registration Fees', required=True)
-    state = fields.Selection(selection=STATE_CHOICES, string='State', default='draft')
+    state = fields.Selection(selection=STATE_CHOICES, string='State', default='draft', readonly=True)
     
     @api.model
     def _generate_name(self):
