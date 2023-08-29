@@ -25,9 +25,10 @@ class StudentRegistration(models.Model):
     phone = fields.Char(related='student_id.phone', readonly=True)
     age = fields.Integer(string='Age', compute='_compute_age', store=True)
     date = fields.Date("Date")
-    currency_id = fields.Many2one(related='student_id.company_id.currency_id',  readonly=True)
+    currency_id = fields.Many2one(comodel_name='res.currency',  readonly=True, default=lambda self: self.env.company.currency_id)
     amount = fields.Monetary(string='Registration Fees', required=True)
     state = fields.Selection(selection=STATE_CHOICES, string='State', default='draft', readonly=True)
+    invoice_id = fields.Many2one(comodel_name='account.move')
     
     @api.model
     def _generate_name(self):
@@ -44,6 +45,13 @@ class StudentRegistration(models.Model):
                 record.age = age
             else:
                 record.age = False
+                
+    # @api.onchange('student_id')
+    # def _onchange_student_id(self):
+    #     for record in self:
+    #         if record.student_id:
+    #             record.currency_id = record.student_id.company_id.currency_id.id
+    #             print(record.student_id.company_id)
     
     # actions
     def confirm_registration(self):
@@ -59,3 +67,22 @@ class StudentRegistration(models.Model):
                 exceptions.UserError('Registration Already Canceled!')
             else:
                 record.state = 'canceled'
+                
+    def create_invoice(self):
+        # Create an invoice associated with this registration
+        invoice_vals = {
+            'partner_id': self.student_id.id,
+            'currency_id': self.currency_id.id,
+            'amount_total': self.amount,
+        }
+        invoice = self.env['account.move'].create(invoice_vals)
+        self.write({'invoice_id': invoice.id})
+        
+    def open_invoice(self):
+        if self.invoice_id:
+            action = self.env.ref('account.action_move_out_invoice_type').read()[0]
+            action['views'] = [(self.env.ref('account.view_move_form').id, 'form')]
+            action['res_id'] = self.invoice_id.id
+            return action
+        else:
+            return {'type': 'ir.actions.act_window_close'}

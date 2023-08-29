@@ -35,19 +35,19 @@ Security:
 1. Create security group called (registration Manager) V
 
 Menu items:
-1. Root menu called Registration
+1. Root menu called Registration  V
 2. Add a new sub menu under the registration menu named (Student Registration) that will open
 the student registration model. This menu item will appear to the user that has a student
-registration manager group.
+registration manager group.   V
 3. Add a new submenu menu under the registration menu called students that shows all partners
-with the check box is_student
+with the check box is_student  V
 
 
 Task 3 (Invoice Model):
-1. registration_id: many2one field on student.registration model
+1. registration_id: many2one field on student.registration model   X
 2. In student registration model worklow add button to create invoice for this student and link it
-to this registration form
-3. Smart button to open the student invoice
+to this registration form  V
+3. Smart button to open the student invoice V
 
 
 Task 4 (Website):
