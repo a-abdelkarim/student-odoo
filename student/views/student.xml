@@ -86,5 +86,13 @@
             <field name="view_mode">form</field>
             <field name="view_id" ref="view_student_registration_form"/>
         </record>
+
+        <record id="action_view_student_partners_tree" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('is_student', '=', True)]</field>
+            <field name="view_id" ref="base.view_partner_tree"/>
+        </record>
     </data>
 </odoo>

@@ -22,7 +22,15 @@
                 action="action_view_student_registration_form"
                 id="student_registration_menu"
                 name="Student Registration"
-                sequence="1"/>
+                sequence="1"
+            />
+
+            <menuitem
+                action="action_view_student_partners_tree"
+                id="student_partners_menu"
+                name="Students"
+                sequence="2"
+            />
 
         </menuitem>
     </data>
