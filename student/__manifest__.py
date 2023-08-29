@@ -26,8 +26,8 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/student_registration_form.xml',
+        'views/website_pages.xml',
         'views/filters.xml',
         'views/res_partner.xml',
         'views/res_sequence.xml',
@@ -40,9 +40,6 @@
     ],
     
     'assets': {
-        'web.assets_common': [
-            'student/static/src/css/student.css'
-        ],
         'web.assets_frontend': [
             'student/static/src/css/student.css'
         ]

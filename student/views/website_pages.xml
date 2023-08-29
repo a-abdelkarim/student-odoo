@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <template id="website_student_registration_page" name="Student Registration Page">
+            <t t-call="website.layout">
+                <div class="container">
+                    <t t-call="student.website_student_registration_form"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="registration_success_alert_page" name="Student Registration Page">
+            <t t-call="website.layout">
+                <div class="container">
+                    <div class="alert alert-success">
+                        Congratulations! Your registration has been successfully submitted.
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- Create a menu item for the student registration page -->
+        <record id="website_student_registration_menu" model="website.menu">
+            <field name="name">Student Registration</field>
+            <field name="url">/student/registration/submit</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">10</field>
+        </record>
+    </data>
+</odoo>

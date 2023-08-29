@@ -1,58 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data>
-
-        <template id="registration_success_template" name="Registration Success">
-            <div class="alert alert-success">
-                Congratulations! Your registration has been successfully submitted.
-            </div>
-        </template>
-
-        <template id="website_student_registration_form" name="Website Student Registration Form">
-            <div class="container">
-                <form action="/student_registration/create" method="post" class="student-registration-form">
-                    <div class="form-group">
-                    <label for="student_id">Student:</label>
-                    <select name="student_id" class="form-control" required="required">
-                        <option value="">Select a student</option>
-                        <t t-foreach="students" t-as="student">
-                            <option t-att-value="student.id"><t t-esc="student.name"/></option>
-                        </t>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="tel" name="phone" class="form-control" required="required" pattern="[0-9]{11}"/>
-                    <small class="form-text text-muted">Please enter a 11-digit phone number.</small>
-                </div>
-                <div class="form-group">
-                    <label for="birth_date">Date:</label>
-                    <input type="date" name="date" class="form-control" required="required"/>
-                </div>
-                <div class="form-group">
-                    <label for="amount">Amount:</label>
-                    <input type="number" name="amount" class="form-control" required="required" step="0.01" min="0"/>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </template>
-
-        <!-- Define the website page -->
-        <template id="website_student_registration_page" name="Student Registration Page">
-            <t t-call="website.layout">
-                <div class="container">
-                    <t t-call="student.website_student_registration_form"/>
-                </div>
-            </t>
-        </template>
-
-        <!-- Create a menu item for the student registration page -->
-        <record id="website_student_registration_menu" model="website.menu">
-            <field name="name">Student Registration</field>
-            <field name="url">/student/registration/submit</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence">10</field>
-        </record>
+        
     </data>
 </odoo>

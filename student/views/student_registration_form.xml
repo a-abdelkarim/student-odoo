@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <template id="website_student_registration_form" name="Website Student Registration Form">
+            <div class="container">
+                <form action="/student/registration/submit" method="post" class="student-registration-form">
+                    <div class="form-group">
+                    <label for="student_id">Student:</label>
+                    <select name="student_id" class="form-control" required="required">
+                        <option value="">Select a student</option>
+                        <t t-foreach="students" t-as="student">
+                            <option t-att-value="student.id"><t t-esc="student.name"/></option>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" name="phone" class="form-control" required="required" pattern="[0-9]{11}"/>
+                    <small class="form-text text-muted">Please enter a 11-digit phone number.</small>
+                </div>
+                <div class="form-group">
+                    <label for="birth_date">Date:</label>
+                    <input type="date" name="date" class="form-control" required="required"/>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" name="amount" class="form-control" required="required" step="0.01" min="0"/>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </template>
+    </data>
+</odoo>

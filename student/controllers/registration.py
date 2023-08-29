@@ -14,7 +14,7 @@ class StudentRegistrationWebsite(http.Controller):
                 'amount': float(post.get('amount')),
             })
             # Provide feedback to the user
-            return request.render('student.registration_success_template')
+            return request.render('student.registration_success_alert_page')
         
         students = request.env['res.partner'].sudo().search([('is_student', '=', True)])
         context = {
