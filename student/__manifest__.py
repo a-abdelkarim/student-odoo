@@ -31,6 +31,7 @@
         'views/res_partner.xml',
         'views/res_sequence.xml',
         'views/student.xml',
+        'views/menu_items.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

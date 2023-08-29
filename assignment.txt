@@ -17,9 +17,9 @@ and when creating students on the ly please make sure that checkbox is checked b
 4. age: computed ield that calculates student age from student birth date and checks for the 4-5
 years constraint.
 5. date: date field. (required*)
-6. currency_id: many2one ield on res.currency model and will take company currency by default.
+6. currency_id: many2one field on res.currency model and will take company currency by default.
 (readonly)
-7. amount: (registration fees) monetary ield. (required*)
+7. amount: (registration fees) monetary field. (required*)
 8. state: selection ield with the following values (draft – conirmed – invoiced - canceled)
 
 
