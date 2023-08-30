@@ -22,12 +22,12 @@ class StudentRegistration(models.Model):
         lambda self: self._generate_name()
     )
     student_id = fields.Many2one(comodel_name='res.partner', domain=[('is_student', '=', True)], required=True)
-    phone = fields.Char(related='student_id.phone', readonly=True)
+    phone = fields.Char(related='student_id.phone')
     age = fields.Integer(string='Age', compute='_compute_age', store=True)
-    date = fields.Date("Date")
+    date = fields.Date(string="Date", required=True)
     currency_id = fields.Many2one(comodel_name='res.currency',  readonly=True, default=lambda self: self.env.company.currency_id)
     amount = fields.Monetary(string='Registration Fees', required=True)
-    state = fields.Selection(selection=STATE_CHOICES, string='State', default='draft', readonly=True)
+    state = fields.Selection(selection=STATE_CHOICES, string='State', default='draft')
     invoice_id = fields.Many2one(comodel_name='account.move')
     
     @api.model

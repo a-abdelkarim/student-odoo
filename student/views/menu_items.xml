@@ -14,7 +14,7 @@
         <menuitem 
             id="root_menu_student" 
             name="Registration" 
-            sequence="2"
+            sequence="10"
             parent='sale.sale_menu_root'
             groups='student.group_registration_manager'
         >  
